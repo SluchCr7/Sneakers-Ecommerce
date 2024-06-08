@@ -1,0 +1,98 @@
+[
+    {
+        "img": "img/product-1.jpg",
+        "imgNoBg" : "img/product-1-removebg-preview.png",
+        "name": "Adidas Sneakers",
+        "price": 130,
+        "rating": 4.3,
+        "sizes" : ["38" , "39", "40", "41" , "42" , "43"],
+        "tags" : ["new", "sale"],
+        "colors" : ["red", "blue" , "black" , "yellow"],
+        "inStock" : true,
+        "categ" : "Man"
+    },
+    {
+        "img": "img/product-2.jpg",
+        "imgNoBg" : "img/product-2-removebg-preview.png",
+        "name": "Adidas Sneakers",
+        "price": 150,
+        "rating" : 4.4,
+        "sizes" : ["38" , "39"],
+        "tags" : ["new", "sale"],
+        "colors" : ["red", "green" , "black"],
+        "inStock" : true,
+        "categ" : "Youth"
+    },
+    {
+        "img": "img/product-3.jpg",
+        "imgNoBg" : "img/product-3-removebg-preview.png",
+        "name": "Adidas Sneakers",
+        "price": 200,
+        "rating": 4.9,
+        "sizes" : ["38" , "39", "40", "41"],
+        "tags" : ["new", "sale"],
+        "colors" : ["red", "blue" , "black"],
+        "inStock" : true,
+        "categ" : "woman"
+    },
+    {
+        "img": "img/product-4.jpg",
+        "imgNoBg" : "img/product-4-removebg-preview.png",
+        "name": "Adidas Sneakers",
+        "price": 230,
+        "rating": 4.5,
+        "colors" : ["red", "blue"],
+        "sizes" : ["38" , "39", "40", "41", "42"],
+        "tags" : ["new", "sale"],
+        "inStock" : false,
+        "categ" : "woman"
+    },
+    {
+        "img": "img/product-5.jpg",
+        "imgNoBg" : "img/product-5-removebg-preview.png",
+        "name": "mens VS PACE 2.0",
+        "price": 300,
+        "rating": 4.2,
+        "colors" : ["red", "blue"],
+        "sizes" : ["38" , "39", "40", "41", "42"],
+        "tags" : ["new", "sale"],
+        "inStock" : true,
+        "categ" : "men"
+    },
+    {
+        "img": "img/product-6.jpg",
+        "imgNoBg" : "img/product-6-removebg-preview.png",
+        "name": "Men GRAND COURT 2.0",
+        "price": 310,
+        "rating": 4.8,
+        "sizes" : ["38"],
+        "tags" : ["new", "Not For Sale"],
+        "colors" : ["red", "blue" , "black"],
+        "inStock" : true,
+        "categ" : "woman"
+    },
+    {
+        "img": "img/product-8.jpg",
+        "imgNoBg" : "img/product-8-removebg-preview.png",
+        "name": "Men BREAKNET 2.0",
+        "price": 120,
+        "rating": 4.5,
+        "sizes" : ["38" , "39", "40", "41"],
+        "tags" : ["new", "sale"],
+        "colors" : ["red", "blue" , "black"],
+        "inStock" : true,
+        "categ" : "woman"
+    },
+    {
+        "img": "img/product-7.jpg",
+        "imgNoBg" : "img/product-7-removebg-preview.png",
+        "name": "Womens GALAXY 6 W",
+        "price": 400,
+        "rating": 4.7,
+        "sizes" : ["38" , "39", "40", "41"],
+        "tags" : ["new", "sale"],
+        "colors" : ["red", "black"],
+        "inStock" : true,
+        "categ" : "woman"
+    }
+]

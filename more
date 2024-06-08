@@ -1,0 +1,476 @@
+
+function submitCart() {
+    btnBuy.forEach((ele) => {
+        ele.addEventListener("click", () => {    
+            console.log(ele.parentNode.parentNode.children[1].innerHTML)
+            num.innerHTML = ++num.innerHTML
+            empty.classList.add("none")
+            cart_item.classList.remove("none")
+            // console.log()
+            cart_item.innerHTML +=
+            `<div class="item flex flex-row items-center w-full gap-5">
+                <img src="${ele.parentNode.parentNode.parentNode.children[0].children[0].src}" alt="">
+                <div class="info flex flex-col items-start gap-1">
+                    <span class="name">${ele.parentNode.parentNode.children[1].innerHTML}</span>
+                    <span class="price">${ele.parentNode.parentNode.children[3].children[1].innerHTML  }</span>
+                </div>
+                <i class="fa-solid fa-trash-can" id="delete"></i>
+                <div class="count flex flex-col items-center gap-1">
+                    <i class="fa-solid fa-minus"></i>
+                    <span id="count">1</span>
+                    <i class="fa-solid fa-plus"></i>
+                </div>
+            </div>
+            ` 
+            count()
+            deleteitem()
+        })  
+    })
+}
+
+
+
+    <!-- <div class="Ads w-full py-[5rem]">
+        <div class="discount">
+            <div class="info">
+                <span>70% Discount Off New Collection</span>
+                <button>Shop Now</button>
+            </div>  
+        </div>
+    </div> -->
+
+
+
+
+
+    .HomeCart{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    padding: 8% 5rem;
+    .TopDetails{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        gap: 2rem;
+        .details{
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            gap: 2rem;
+            .Categ{
+                @include font(var(--sm-font), var(--weight-lg) , var(--second-color));
+                text-transform: uppercase;
+            }
+            .shoe_title{
+                @include font(2rem, var(--weight-xlg) , var(--black));
+                width: 80%;
+            }
+            p{
+                width: 50%;
+                color: #b2b2b2;
+            }
+            .images{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 10px;
+                img{
+                    border-radius: 10px;
+                }
+            }
+        }
+        .SizeColorDetails{
+            .sizeChoose{
+                span{
+                    font-size: 1rem;
+                    color: var(--black);
+                    text-transform: capitalize;
+                }
+                .ChooseSize{
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 20px;
+                    div{
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%;
+                        border: 1px solid #000;
+                        @include center();
+                    }
+                }
+            }
+        }
+        .colorscontChoose{
+            .colors{
+                div{
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    &.red{
+                        background-color: rgb(249, 24, 128);
+                    }
+                    &.black{
+                        background-color: var(--black);
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+                <div class="card_info_card absolute top-[50%] left-[20%] none">
+                    <div class="card_info flex flex-row items-center relative">
+                        <div class="image">
+                            <img src="img/product-1-removebg-preview.png" alt="">
+                        </div>
+                        <div class="details flex flex-col items-start gap-3">
+                            <div class="intro flex flex-col items-start gap-2">
+                                <span class="categ">Mens</span>
+                                <span class="title">Sneakers Man Sports</span>
+                            </div>
+                            <div class="ratings flex flex-row items-center gap-[10px]">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </div>
+                            <div class="size flex flex-col items-start gap-[10px]">
+                                <span class="sizetxt text-lg text-black">Size :</span>
+                                <div class="sizeCont flex flex-row items-center gap-[30px]">
+                                    <span class="sizeNum">37</span>
+                                    <span class="sizeNum">38</span>
+                                    <span class="sizeNum">39</span>
+                                    <span class="sizeNum">40</span>
+                                    <span class="sizeNum">41</span>
+                                    <span class="sizeNum">42</span>
+                                </div>  
+                            </div>
+                            <div class="colors flex flex-col items-start gap-[10px]">
+                                <span class="colortxt text-lg text-black">Color</span>
+                                <div class="colorCont flex flex-row items-center gap-[30px]">
+                                    <span class="color red"></span>
+                                    <span class="color blue"></span>
+                                </div>
+                            </div>
+                            <div class="price flex flex-row items-center justify-between w-[80%]">
+                                <span class="pricetxt">Price</span>
+                                <span class="priceNum">$ 150.00</span>
+                            </div>
+                            <div class="buttons flex flex-row items-center justify-between w-full">
+                                <div class="count">
+                                    <i class="fa-solid fa-minus"></i>
+                                    <span>1</span>
+                                    <i class="fa-solid fa-plus"></i>
+                                </div>
+                                <button class="addCart">Add To Cart</button>
+                            </div>
+                        </div>
+                        <div class="close absolute top-[-20px] right-[-10px]">
+                            <i class="fa-solid fa-xmark"></i>
+                        </div>
+    
+                    </div>
+                </div>
+
+
+                let cardsContain = document.createElement("div")
+                                cardsContain.classList.add("card_info_card")
+        
+                                let card_info = document.createElement("div")
+                                card_info.classList.add("card_info")
+                                // Image
+                                let imageCont = document.createElement("div")
+                                imageCont.classList.add("image")
+                                let img = document.createElement("img")
+                                img.src = data[i].imgNoBg
+                                imageCont.appendChild(img)
+
+                                // details
+                                const details = document.createElement("div")
+                                details.classList.add("details")
+
+
+                                // intro
+                                const introSec = document.createElement("div")
+                                introSec.classList.add("intro")
+                                // Categ
+                                const categ = document.createElement("span")
+                                categ.classList.add("categ")
+                                categ.textContent = data[i].categ
+                                introSec.appendChild(categ)
+                                // Shoes Name
+                                const nameSh = document.createElement("span")
+                                nameSh.classList.add("title")
+                                nameSh.textContent = data[i].name
+                                introSec.appendChild(nameSh)
+
+                                // ratings
+                                const rating = document.createElement("div")
+                                rating.classList.add("ratings")
+                                let ratingsp = document.createElement("span")
+                                ratingsp.classList.add("ratingtxt")
+                                ratingsp.textContent = data[i].rating
+
+                                // Sizes
+
+                                const sizes = document.createElement("div")
+                                sizes.classList.add("size")
+                                let spanSize = document.createElement("span")
+                                spanSize.classList.add("sizetxt")
+                                spanSize.textContent = "Size :"
+                                const sizeOptions = document.createElement("div")
+                                sizeOptions.classList.add("sizeCont")
+
+                                for (let i = 0; i< data[i].size ; i++){
+                                    let span = document.createElement("span")
+                                    span.classList.add("sizeNum")
+                                    span.textContent = data[i].size
+                                    sizeOptions.appendChild(span)   
+                                }
+                                sizes.appendChild(spanSize)
+                                sizes.appendChild(sizeOptions)
+
+
+                                // Colors
+                                let colorCont = document.createElement("div")
+                                colorCont.classList.add("colors")
+                                let spanColor = document.createElement("span")
+                                spanColor.classList.add("colortxt")
+                                spanColor.textContent = "Colors :"
+                                let colorsOptions = document.createElement("div")
+                                colorsOptions.classList.add("colorCont")
+
+                                for (let i = 0; i < data[i].color; i++) {
+                                    {
+                                        let span = document.createElement("span")
+                                        span.classList.add("color")
+                                        span.classList.add(data[i].color)
+                                        span.style.backgroundColor = data[i].color
+                                        colorsOptions.appendChild(span)
+                                    }
+
+                                    colorCont.appendChild(spanColor)
+                                    colorCont.appendChild(colorsOptions)
+
+                                    // Price
+
+                                    let price = document.createElement("div")
+                                    price.classList.add("price")
+                                    let txtprice = document.createElement("span")
+                                    txtprice.classList.add("pricetxt")
+                                    txtprice.textContent = "Price :"
+                                    let pricenum = document.createElement("span")
+                                    pricenum.classList.add("priceNum")
+                                    pricenum.textContent = "$" + data[i].price
+                                    price.appendChild(txtprice)
+                                    price.appendChild(pricenum)
+
+                                    // buttons
+                                    let buttons = document.createElement("div")
+                                    buttons.classList.add("buttons")
+
+                                    let count = document.createElement("div")
+                                    count.classList.add("count")
+                                    let mines = document.createElement("i")
+                                    mines.classList.add("fa-solid fa-minus")
+                                    let plus = document.createElement("i")
+                                    plus.classList.add("fa-solid fa-plus")
+                                    let countNum = document.createElement("span")
+                                    countNum.classList.add("countNum")
+                                    countNum.textContent = 1
+
+                                    count.appendChild(mines)
+                                    count.appendChild(countNum)
+                                    count.appendChild(plus)
+
+                                    buttons.appendChild(count)
+                                    let buttonCart = document.createElement("button")
+                                    buttonCart.textContent = "Add To Cart"
+                                    buttonCart.classList.add("addCart")
+                                    buttons.appendChild(buttonCart)
+                                    // Details Append
+                                    details.appendChild(introSec)
+                                    details.appendChild(rating)
+                                    details.appendChild(sizes)
+                                    details.appendChild(colorCont)
+                                    details.appendChild(price)
+                                    details.appendChild(buttons)
+
+                                    // Close Icon
+
+                                    let close = document.createElement("div")
+                                    close.classList.add("close")
+                                    let closeIcon = document.createElement("i")
+                                    closeIcon.classList.add("fa-solid fa-xmark")
+                                    close.appendChild(closeIcon)
+                                    // Father
+                                    card_info.appendChild(imageCont)
+                                    card_info.appendChild(details)
+                                    card_info.appendChild(close)
+                                    cardsContain.appendChild(card_info)
+                                    cardinfo.innerHTML = cardsContain
+
+
+let products = document.querySelectorAll(".product .image")
+    let cardinfo = document.getElementById("card_info")
+    products.forEach((item, index) => {
+        item.addEventListener("click", () => {
+            fetch("./cards.json")
+            .then(res => res.json())
+            .then(data => {
+                console.log(item.parentElement.children[1].children[1].textContent)
+                console.log(data[i].name)
+                for (let i = 0; i < data.length; i++) {
+                    if(item.parentElement.children[1].children[1].textContent === data[i].name){
+                        cardinfo.innerHTML = `
+                            <div class="card_info_card fixed top-[20%] left-[30%] z-[999]">
+                                <div class="card_info flex flex-row items-center relative">
+                                    <div class="image">
+                                        <img src=${data[i].imgNoBg} alt="">
+                                    </div>
+                                    <div class="details flex flex-col items-start gap-3">
+                                        <div class="intro flex flex-col items-start gap-2">
+                                            <span class="categ">Mens</span>
+                                            <span class="title">${data[i].name}</span>
+                                        </div>
+                                        <div class="ratings flex flex-row items-center gap-[10px]">
+                                            ${
+                                            data[i].rating > 4.0 && data[i].rating < 4.5 ?
+                                            
+                                            `
+                                            
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star-half-stroke"></i>
+                                            `
+                                            : ""
+                                        }
+                                        </div>
+                                        <div class="size flex flex-col items-start gap-[10px]">
+                                            <span class="sizetxt text-lg text-black">Size :</span>
+                                            <div class="sizeCont flex flex-row items-center gap-[30px]">
+                                            ${data[i].sizes.map((ele)=> `<span class="sizeNum">${ele}</span>`).join(" ")}
+                                            </div>  
+                                        </div>
+                                        <div class="colors flex flex-col items-start gap-[10px]">
+                                            <span class="colortxt text-lg text-black">Color</span>
+                                            <div class="colorCont flex flex-row items-center gap-[30px]">
+                                                ${data[i].colors.map((col)=> `<span class="color ${col}"></span>`).join(" ")}
+                                            </div>
+                                        </div>
+                                        <div class="price flex flex-row items-center justify-between w-[80%]">
+                                            <span class="pricetxt">Price</span>
+                                            <span class="priceNum">$${data[i].price}</span>
+                                        </div>
+                                        <div class="buttons flex flex-row items-center gap-[20px] w-full">
+                                            <div class="count">
+                                                <i class="fa-solid fa-minus"></i>
+                                                <span>1</span>
+                                                <i class="fa-solid fa-plus"></i>
+                                            </div>
+                                            <button class="addCart">Add To Cart</button>
+                                        </div>
+                                    </div>
+                                    <div class="close absolute top-[-20px] right-[-10px]">
+                                        <i class="fa-solid fa-xmark"></i>
+                                    </div>
+                
+                                </div>
+                            </div>
+                                    
+                        
+                        `
+                        })
+                    })
+                })
+            }
+        })
+
+function cardDetails() {
+    let products = document.querySelectorAll(".product .image")
+    let cardinfo = document.getElementById("card_info")
+    products.forEach((item, index) => {
+        item.addEventListener("click", () => {
+            fetch("./cards.json")
+            .then(res => res.json())
+            .then(data => {
+                console.log(item.parentElement.children[1].children[1].textContent)
+                console.log(data[i].name)
+                for (let i = 0; i < data.length; i++) {
+                    if(item.parentElement.children[1].children[1].textContent === data[i].name){
+                        cardinfo.innerHTML = `
+                            <div class="card_info_card absolute top-[50%] left-[20%]">
+                                <div class="card_info flex flex-row items-center relative">
+                                    <div class="image">
+                                        <img src=${data[i].imgNoBg} alt="">
+                                    </div>
+                                    <div class="details flex flex-col items-start gap-3">
+                                        <div class="intro flex flex-col items-start gap-2">
+                                            <span class="categ">Mens</span>
+                                            <span class="title">${data[i].name}</span>
+                                        </div>
+                                        <div class="ratings flex flex-row items-center gap-[10px]">
+                                            ${
+                                            data[i].rating > 4.0 && data[i].rating < 4.5 ?
+                                            
+                                            `
+                                            
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star-half-stroke"></i>
+                                            `
+                                            : ""
+                                        }
+                                        </div>
+                                        <div class="size flex flex-col items-start gap-[10px]">
+                                            <span class="sizetxt text-lg text-black">Size :</span>
+                                            <div class="sizeCont flex flex-row items-center gap-[30px]">
+                                            ${data[i].sizes.map((ele)=> `<span class="sizeNum">${ele}</span>`).join(" ")}
+                                            </div>  
+                                        </div>
+                                        <div class="colors flex flex-col items-start gap-[10px]">
+                                            <span class="colortxt text-lg text-black">Color</span>
+                                            <div class="colorCont flex flex-row items-center gap-[30px]">
+                                                ${data[i].colors.map((col)=> `<span class="color ${col}"></span>`).join(" ")}
+                                            </div>
+                                        </div>
+                                        <div class="price flex flex-row items-center justify-between w-[80%]">
+                                            <span class="pricetxt">Price</span>
+                                            <span class="priceNum">$${data[i].price}</span>
+                                        </div>
+                                        <div class="buttons flex flex-row items-center gap-[20px] w-full">
+                                            <div class="count">
+                                                <i class="fa-solid fa-minus"></i>
+                                                <span>1</span>
+                                                <i class="fa-solid fa-plus"></i>
+                                            </div>
+                                            <button class="addCart">Add To Cart</button>
+                                        </div>
+                                    </div>
+                                    <div class="close absolute top-[-20px] right-[-10px]">
+                                        <i class="fa-solid fa-xmark"></i>
+                                    </div>
+                
+                                </div>
+                            </div>
+                                    
+                        
+                        `
+                    }
+                    }
+                })
+            })
+        })
+}

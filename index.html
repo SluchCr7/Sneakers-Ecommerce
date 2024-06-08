@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sneakers</title>
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Icons Libraries -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Icon -->
+    <link rel="shortcut icon" href="img/sport-shoe.png" type="image/x-icon">
+</head>
+<body>
+    <div class="container_main" id="Conthome">
+
+        <!-- Start Menu -->
+        <div class="Menu">
+            <div class="setting">
+                <i class="fa-solid fa-gear" id="setting"></i>
+            </div>
+            <div class="menuColor none">
+                <li class="active base" data-color="base"></li>
+                <li class="red" data-color="red"></li>
+                <li class="green" data-color="green"></li>
+                <li class="blue" data-color="blue"></li>
+            </div>
+        </div>
+        <!-- End Menu -->
+
+        <!-- Start Header -->
+        <div class="header">
+            <div class="nav" id="nav">
+                <div class="Left_Nav">
+                    <img src="img/logo.svg" alt="">
+                    <ul class="list_links">
+                        <li class="link activelink"><a href="#Home">Home</a></li>
+                        <li class="link"><a href="./cart.html">Cart</a></li>
+                        <li class="link"><a href="#Products">Products</a></li>
+                        <li class="link"><a href="#New">New</a></li>
+                    </ul>
+                </div>
+                <div class="Right-Nav" id="Right_Nav">
+                    <div class="Icons">
+                        <div class="cart_cont">
+                            <span class="num">0</span>
+                            <img src="img/icon-cart.svg" alt="" class="icon_cart">
+                        </div>
+                        <img src="img/Home.jpg" alt="" class="img_profile">
+                    </div>
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+            <div class="adsShoes flex flex-row items-center w-full gap-5 px-[6rem] my-[10%]">
+                <div class="img w-[60%] h-full relative">
+                    <img src="showcase/shoe1-1/img1.png" class="w-[80%] relative left-[15%] rotate-[30deg]" alt="">
+                    <div class="bg"></div>
+                    <!-- <div class="messDisc">Get Up to 50 % Discount</div> -->
+                </div>
+                <div class="text w-[40%] flex flex-col items-start gap-5">
+                    <span class="title">About Us</span>
+                    <span class="heading">We Provide A high Quality Shoes Sneakers</span>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit nam quae odit ad illum animi, voluptatum optio, qui ex quibusdam est obcaecati! Dolores eligendi unde quo in cum a dolor?</p>
+                    <button><a href="#New">Discover Shoes</a></button>
+                </div>
+            </div>
+        </div>
+    
+        <!-- End Header -->
+    
+        <!-- Start Shoes Page -->
+    
+        <div class="shoes flex flex-col items-center w-full pt-[8rem] pb-[4rem]" id="Products">
+            <span class="title">My Collection</span>
+            <div class="shoesCont grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 gap-6 mt-[6rem]">
+                <div class="item flex flex-col items-center w-[400px]">
+                    <img src="img/collection-1n.png" alt="">
+                    <div class="info">
+                        <span class="name">Sneakers Woman Sports</span>
+                        <span class="price">$ 150.00</span>
+                    </div>
+                    <div class="icons">
+                        <i class="fa-regular fa-heart"></i>
+                        <i class="fa-solid fa-code-compare"></i>
+                        <i class="fa-solid fa-bag-shopping"></i>
+                    </div>
+                </div>
+                <div class="item flex flex-col items-center w-[400px] relative active">
+                    <img src="img/collection-2n.png" alt="">
+                    <div class="info">
+                        <span class="name">Sneakers Holiday</span>
+                        <span class="price">$ 150.00</span>
+                    </div>
+                    <div class="icons">
+                        <i class="fa-regular fa-heart"></i>
+                        <i class="fa-solid fa-code-compare"></i>
+                        <i class="fa-solid fa-bag-shopping"></i>
+                    </div>
+                    <div class="NewMess absolute top-[-20px]">
+                        <span class="new">New</span>
+                    </div>
+                </div>
+                <div class="item flex flex-col items-center w-[400px]">
+                    <img src="img/collection-3n.png" alt="">
+                    <div class="info">
+                        <span class="name">Sneakers Man Sports</span>
+                        <span class="price">$ 150.00</span>
+                    </div>
+                    <div class="icons">
+                        <i class="fa-regular fa-heart"></i>
+                        <i class="fa-solid fa-code-compare"></i>
+                        <i class="fa-solid fa-bag-shopping"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- End Shoes Page -->
+
+
+        <!-- start ads -->
+
+        <div class="Home relative my-[10%]" id="Home">
+            <div class="item flex flex-col items-center w-full" id="itemSlider">
+            </div>
+            <div class="pagination">
+                <i class="fa-solid fa-chevron-left" id="prev"></i>
+                <ul class="paginationitems">
+                </ul>
+                <i class="fa-solid fa-chevron-right" id="next"></i>
+            </div>
+        </div>
+
+        <!-- Start Arrow Btn -->
+
+        <div class="btn_arrow none" id="btn_arrow">
+            <button class="arrow"><i class="fa-solid fa-chevron-up"></i></button>
+        </div>
+
+        <!-- End Arrow Btn -->
+
+
+        <!-- Start Products Section -->
+
+        <div class="products mt-[6rem] pb-[4rem] relative" id="New">
+            <div class="intro flex flex-col items-center gap-2">
+                <span class="title">New Products</span>
+                <span class="seeAll">See All Sneakers Products</span>
+            </div>
+            <div class="productsContCont flex flex-col items-center w-full relative mb-[3rem]">
+                <div class="productsCont grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-[6rem]" id="productsCont">
+                </div>
+                <!-- <div class="iconArrowMore absolute bottom-[-50px]">
+                    <i class="fa-solid fa-chevron-down" id="iconArrowMore"></i>
+                </div> -->
+            </div>
+        </div>
+
+        <!-- End Products Section -->
+
+
+        <!-- Start Faq Section -->
+
+        <div class="faq mt-[6rem] pb-[4rem] w-full flex flex-col items-center" id="FAQ">
+            <span class="title">Frequently Asked Questions</span>
+            <div class="faqCont w-full grid grid-cols-1 lg:grid-cols-1 xl:grid-cols-1 gap-7 mt-[6rem]">
+            </div>
+        </div>
+
+        <!-- End Faq Section -->
+
+        <!-- Start Footer -->
+        <div class="footer flex flex-col items-start w-full ">
+            <div class="top_footer flex flex-row items-center px-[6rem] pt-[4rem] pb-[2rem] w-full justify-between">
+                <div class="Logo">
+                    <img src="img/logo.svg" alt="">
+                </div>
+                <div class="links">
+                    <ul class="icons flex flex-row items-center gap-6">
+                        <li><i class="fa-brands fa-facebook-f"></i></li>
+                        <li><i class="fa-brands fa-twitter"></i></li>
+                        <li><i class="fa-brands fa-instagram"></i></li>
+                        <li><i class="fa-brands fa-pinterest-p"></i></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="Mid_footer w-full">
+                <div class="Mid_footer_cont w-full grid grid-cols-2 px-[6rem] pt-[4rem] pb-[2rem] md:grid-cols-2 xl:grid-cols-5 xl:gap-[0rem] gap-[2rem]">
+                    <div class="Links flex flex-col items-start gap-4">
+                        <span class="title">Links</span>
+                        <ul class="list_links">
+                            <li class="link"><a href="#Home">Home</a></li>
+                            <li class="link"><a href="#Products">Products</a></li>
+                            <li class="link"><a href="#New">New</a></li>
+                            <li class="link"><a href="#Contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="Links flex flex-col items-start gap-4">
+                        <span class="title">About</span>
+                        <ul class="list_links">
+                            <li class="link"><a href="#">About Us</a></li>
+                            <li class="link"><a href="#">Features</a></li>
+                            <li class="link"><a href="#">Blog</a></li>  
+                        </ul>   
+                    </div>
+                    <div class="Links flex flex-col items-start gap-4">
+                        <span class="title">Support</span>
+                        <ul class="list_links">
+                            <li class="link"><a href="#">Help & Support</a></li>
+                            <li class="link"><a href="#">Live Chat</a></li>
+                            <li class="link"><a href="#">Product Recall</a></li>
+                            <li class="link"><a href="#">Report Product</a></li>
+                        </ul>
+                    </div>
+                    <div class="Links flex flex-col items-start gap-4">
+                        <span class="title">Get In Touch</span>
+                        <ul class="list_links">
+                            <li class="link"><a href="#">Contact Us</a></li>
+                            <li class="link"><a href="#">Terms & Condition</a></li>
+                            <li class="link"><a href="#">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="newsLetter flex flex-col items-start gap-4">
+                        <span class="title">Newsletter</span>
+                        <div class="input flex flex-row items-start gap-2">
+                            <div class="inputcont flex flex-col items-start gap-3">
+                                <input type="text" placeholder="Enter Your Email" id="email">
+                            </div>
+                            <button id="btn_email">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom_footer">
+                <span class="copyright">Copyright 2024. All Rights Reserved</span>
+            </div>
+        </div>
+
+        <!-- End Footer -->
+    </div>
+
+    <!-- End Products Section -->
+
+    <!-- Start Card Menu -->
+
+    <div class="cart none" id="cart">
+        <div class="cartConent">
+            <div class="empty_cart" id="empty">
+                <span class="title">Cart IS Empty</span>
+            </div>
+            <div class="cart-content_items flex flex-col items-start">
+                <div class="intro">
+                    <span>MY CART</span>
+                </div>
+                <div class="cart_items flex flex-col items-center gap-3 w-full none" id="cart_item">
+                </div>
+                <button class="btn_check">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- End Card  Menu -->
+
+    <!-- Start Cart Shoes Details -->
+
+        <div class="card_info_cont" id="card_info">
+
+        </div>
+
+        <!-- End Card Shoes Details -->
+    <script src="index.js"></script>
+</body>
+</html>
