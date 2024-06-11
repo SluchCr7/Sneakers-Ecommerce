@@ -35,13 +35,14 @@ function slider() {
   var i = 0;
 
   function slideCard() {
-    itemSlider.innerHTML = "\n            <div class=\"img\">\n                <img src=\"".concat(objSlide[i].img, "\" alt=\"\">\n            </div>\n            <div class=\"info\">\n                <span class=\"OFFER\">Special Offer</span>\n                <span class=\"title\">").concat(objSlide[i].name, "</span>\n                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, culpa minus? Ipsam praesentium quidem unde delectus eius eveniet labore sunt error distinctio quam doloribus in doloremque, nisi reiciendis? Laboriosam, cumque?</p>\n                <div class=\"price\">\n                    <span class=\"discount\">$<span class=\"original-price\">").concat(objSlide[i]["original-price"], "</span></span>\n                    <span class=\"priceNew\">$<span class=\"price_new\">").concat(objSlide[i].price, "</span></span>\n                </div>\n                <div class=\"buttons\">\n                    <button class=\"btnSubmit\" id=\"btnBuy\">Buy Now</button>\n                    <button class=\"btn\"><a href=\"#Products\">Discover More</a></button>\n                </div>\n            </div>\n        ");
+    itemSlider.innerHTML = "\n        <div class=\"info w-[50%] flex flex-col items-start gap-4\">\n            <span class=\"OFFER\">Special Offer</span>\n            <span class=\"title\">".concat(objSlide[i].name, "</span>\n            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, culpa minus? Ipsam praesentium quidem unde delectus eius eveniet labore sunt error distinctio quam doloribus in doloremque, nisi reiciendis? Laboriosam, cumque?</p>\n            <div class=\"price\">\n                    <span class=\"discount\">$<span class=\"original-price\">").concat(objSlide[i]["original-price"], "</span></span>\n                    <span class=\"priceNew\">$<span class=\"price_new\">").concat(objSlide[i].price, "</span></span>\n            </div>\n            <div class=\"buttons\">\n                <button class=\"btnSubmit\" id=\"btnBuy\">Buy Now</button>\n                <!-- <button class=\"btn\">Discover More</button> -->\n                <div class=\"count flex flex-row items-center gap-4 w-[150px] p-[15px] justify-center border-none outline-none rounded-lg text-white\">\n                <i class=\"fa-solid fa-minus lessCount\" id=\"lessCount\"></i>\n                <span id=\"count\">1</span>\n                <i class=\"fa-solid fa-plus plusCount\" id=\"plusCount\"></i>\n                </div>\n            </div>\n        </div>\n        <div class=\"img w-[50%] relative\">\n            <img src=").concat(objSlide[i].img, " alt=\"\">\n        </div>\n        ");
+    countNum();
     var btnBuy = document.getElementById("btnBuy");
     btnBuy.addEventListener("click", function () {
       num.innerHTML = ++num.innerHTML;
       empty.classList.add("none");
       cart_item.classList.remove("none");
-      createCard(btnBuy.parentNode.parentNode.parentNode.children[0].children[0].src, btnBuy.parentNode.parentNode.children[1].innerHTML, btnBuy.parentNode.parentNode.children[3].children[1].children[0].innerHTML);
+      createCard(btnBuy.parentNode.parentNode.parentNode.children[1].children[0].src, btnBuy.parentNode.parentNode.children[1].innerHTML, btnBuy.parentNode.parentNode.children[3].children[1].children[0].innerHTML, btnBuy.parentNode.parentNode.children[4].children[1].children[1].textContent);
     });
   } // Next Aroww & Prev Aroww
 
@@ -78,43 +79,50 @@ var RightNav = document.getElementById("Right_Nav");
 var num = document.querySelector(".num");
 
 window.onload = function () {
-  itemSlider.innerHTML = "\n        <div class=\"img\">\n            <img src=\"showcase/shoe1-1/img1.png\" alt=\"\">\n        </div>\n        <div class=\"info\">\n            <span class=\"OFFER\">Special Offer</span>\n            <span class=\"title\">Running Sneaker Shoes</span>\n            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, culpa minus? Ipsam praesentium quidem unde delectus eius eveniet labore sunt error distinctio quam doloribus in doloremque, nisi reiciendis? Laboriosam, cumque?</p>\n            <div class=\"price\">\n                    <span class=\"discount\">$<span class=\"original-price\">120.00</span></span>\n                    <span class=\"priceNew\">$<span class=\"price_new\">80.00</span></span>\n            </div>\n            <div class=\"buttons\">\n                <button class=\"btnSubmit\" id=\"btnBuy\">Buy Now</button>\n                <button class=\"btn\">Discover More</button>\n            </div>\n        </div>\n    ";
+  itemSlider.innerHTML = "\n    <div class=\"info w-[50%] flex flex-col items-start gap-4\">\n        <span class=\"OFFER\">Special Offer</span>\n        <span class=\"title\">Running Sneaker Shoes</span>\n        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, culpa minus? Ipsam praesentium quidem unde delectus eius eveniet labore sunt error distinctio quam doloribus in doloremque, nisi reiciendis? Laboriosam, cumque?</p>\n        <div class=\"price\">\n                <span class=\"discount\">$<span class=\"original-price\">120.00</span></span>\n                <span class=\"priceNew\">$<span class=\"price_new\">80.00</span></span>\n        </div>\n        <div class=\"buttons\">\n            <button class=\"btnSubmit\" id=\"btnBuy\">Buy Now</button>\n            <!-- <button class=\"btn\">Discover More</button> -->\n            <div class=\"count flex flex-row items-center gap-4 w-[150px] p-[15px] justify-center border-none outline-none rounded-lg text-white\">\n                <i class=\"fa-solid fa-minus lessCount\" id=\"lessCount\"></i>\n                <span id=\"count\">1</span>\n                <i class=\"fa-solid fa-plus plusCount\" id=\"plusCount\"></i>\n            </div>\n        </div>\n    </div>\n    <div class=\"img w-[50%] relative\">\n        <img src=\"showcase/shoe1-1/img1.png\" alt=\"\">\n    </div>\n    ";
+  countNum();
   var btnBuy = document.getElementById("btnBuy");
   btnBuy.addEventListener("click", function () {
+    console.log(btnBuy.parentNode.parentNode.children[4].children[1].children[1].textContent);
     num.innerHTML = ++num.innerHTML;
     empty.classList.add("none");
     cart_item.classList.remove("none");
-    createCard(btnBuy.parentNode.parentNode.parentNode.children[0].children[0].src, btnBuy.parentNode.parentNode.children[1].innerHTML, btnBuy.parentNode.parentNode.children[3].children[1].children[0].innerHTML);
+    createCard(btnBuy.parentNode.parentNode.parentNode.children[1].children[0].src, btnBuy.parentNode.parentNode.children[1].innerHTML, btnBuy.parentNode.parentNode.children[3].children[1].children[0].innerHTML, btnBuy.parentNode.parentNode.children[4].children[1].children[1].textContent);
   });
 }; // ================ Card Cart Create ===============
 
 
-function createCard(img, name, price) {
-  cart_item.innerHTML += "<div class=\"item flex flex-row items-center w-full gap-5 justify-between\">\n        <div class=\"left flex flex-row items-center gap-5\">\n            <img src=".concat(img, " alt=\"\">\n            <div class=\"info flex flex-col items-start gap-1\">\n                <span class=\"name\">").concat(name, "</span>\n                <div class=\"priceDelCont flex flex-row items-center gap-3\">\n                    <span class=\"price\">").concat(price, "</span>\n                    <i class=\"fa-solid fa-trash-can\" id=\"delete\"></i>\n                </div>\n            </div>\n        </div>\n        <div class=\"count flex flex-col items-center gap-1\">\n            <i class=\"fa-solid fa-minus\"></i>\n            <span id=\"count\">1</span>\n            <i class=\"fa-solid fa-plus\"></i>\n        </div>\n    </div>\n    ");
-  count();
+function createCard(img, name, price, countNum) {
+  cart_item.innerHTML += "<div class=\"item flex flex-row items-center w-full gap-5 justify-between\">\n        <div class=\"left flex flex-row items-center gap-5\">\n            <img src=".concat(img, " alt=\"\">\n            <div class=\"info flex flex-col items-start gap-1\">\n                <span class=\"name\">").concat(name, "</span>\n                <div class=\"priceDelCont flex flex-row items-center gap-3\">\n                    <span class=\"price\">$").concat(price, " * ").concat(countNum, " = <span class=\"total\">$").concat(price * countNum, ".00</span></span>\n                    <i class=\"fa-solid fa-trash-can\" id=\"delete\"></i>\n                </div>\n            </div>\n        </div>\n    </div>\n    ");
   deleteitem();
-} // =============== Count ================
+}
 
+function cartIcon() {
+  var Right_Nav = document.getElementById("Right_Nav");
+  var cart = document.getElementById("cart");
 
-function count() {
-  var minus = document.querySelectorAll(".fa-minus");
-  var plus = document.querySelectorAll(".fa-plus");
-  var count = document.querySelectorAll("#count");
-  minus.forEach(function (item, index) {
-    item.addEventListener("click", function () {
-      if (count[index].innerHTML > 0) {
-        count[index].innerHTML--;
-      } else {
-        // console.log(minus[index].parentElement.parentElement)
-        minus[index].parentElement.parentElement.remove();
-        num.innerHTML--;
-      }
-    });
+  if (!cart_item.classList.contains("none") && window.screen.width < 768) {
+    Right_Nav.classList.add("rightNav");
+  } else {
+    Right_Nav.classList.remove("rightNav");
+  }
+}
+
+window.addEventListener("resize", cartIcon); // =============== Count ================
+
+function countNum() {
+  var count = document.getElementById("count");
+  var lessCount = document.getElementById("lessCount");
+  var plusCount = document.getElementById("plusCount");
+  lessCount.addEventListener("click", function () {
+    if (count.textContent > 1) {
+      count.innerHTML = --count.innerHTML;
+    } else {
+      count.innerHTML = 1;
+    }
   });
-  plus.forEach(function (item, index) {
-    item.addEventListener("click", function () {
-      count[index].innerHTML++;
-    });
+  plusCount.addEventListener("click", function () {
+    count.innerHTML = ++count.innerHTML;
   });
 } // ================ Delete item ================
 
@@ -123,7 +131,8 @@ function deleteitem() {
   var deleteitem = document.querySelectorAll("#delete");
   deleteitem.forEach(function (item, index) {
     item.addEventListener("click", function () {
-      item.parentElement.parentElement.remove();
+      // console.log(item.parentElement.parentElement.parentElement.parentElement)
+      item.parentElement.parentElement.parentElement.parentElement.remove();
       num.innerHTML--;
 
       if (num.innerHTML == 0) {
@@ -309,4 +318,71 @@ function fqs() {
   });
 }
 
-fqs();
+fqs(); // ================= Payment Details ======================
+
+var form_paymentCheckOut = document.querySelector(".form_paymentCheckOut");
+var btn_checkOut = document.querySelector(".btn_check");
+var total = document.querySelectorAll(".total");
+var price_total = document.querySelector(".price_total");
+btn_checkOut.addEventListener("click", function () {
+  form_paymentCheckOut.classList.remove("none");
+});
+var faxmark = document.querySelectorAll(".fa-xmark");
+faxmark.forEach(function (item) {
+  item.addEventListener("click", function () {
+    form_paymentCheckOut.classList.add("none");
+  });
+});
+var emailPay = document.getElementById("emailPay");
+var card_number = document.getElementById("card_number");
+var date = document.getElementById("date");
+var cvv = document.getElementById("cvc");
+var card_name = document.getElementById("card_name");
+var btn_pay = document.querySelector(".btn_pay");
+var cardNumRegex = /^(?:4[0-9]{12}(?:[0-9]{3})?)$/;
+var dateRegex = /^(0[1-9]|1[0-2])\/?([0-9]{4}|[0-9]{2})$/;
+var cvcRegex = /^[0-9]{3}$/;
+var cardNameRegex = /^[a-zA-Z\s]+$/;
+var inputForm = document.querySelectorAll(".form_paymentCheckOut input");
+btn_pay.addEventListener("click", function () {
+  inputForm.forEach(function (ele) {
+    if (ele.value == "") {
+      ele.classList.add("redBorder");
+      setTimeout(function () {
+        ele.classList.remove("redBorder");
+      }, 1000);
+    }
+
+    if (ele.getAttribute("id") == "emailPay" && !ele.value.match(emailregex)) {
+      ele.classList.add("redBorder");
+      setTimeout(function () {
+        ele.classList.remove("redBorder");
+      }, 1000);
+    }
+
+    if (ele.getAttribute("id") == "card_number" && !ele.value.match(cardNumRegex)) {
+      ele.classList.add("redBorder");
+      setTimeout(function () {
+        ele.classList.remove("redBorder");
+      }, 1000);
+    }
+
+    if (ele.getAttribute("id") == "card_name" && !ele.value.match(cardNameRegex)) {
+      ele.classList.add("redBorder");
+      setTimeout(function () {
+        ele.classList.remove("redBorder");
+      }, 1000);
+    }
+
+    if (ele.getAttribute("id") == "cvc" && !ele.value.match(cvcRegex)) {
+      ele.classList.add("redBorder");
+      setTimeout(function () {
+        ele.classList.remove("redBorder");
+      }, 1000);
+    } else if (cvv.value.match(cvcRegex) && card_name.value.match(cardNameRegex) && card_number.value.match(cardNumRegex) && emailPay.value.match(emailregex)) {
+      form_paymentCheckOut.classList.add("none");
+      console.log("Done");
+      document.querySelector(".cart_items").innerHTML = "";
+    }
+  });
+});

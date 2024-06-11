@@ -20,9 +20,9 @@
     <div class="container_main" id="Conthome">
 
         <!-- Start Menu -->
-        <div class="Menu">
-            <div class="setting">
-                <i class="fa-solid fa-gear" id="setting"></i>
+        <div class="Menu fixed left-[20px] top-[20%]">
+            <div class="setting p-[20px] justify-center bg-black">
+                <i class="fa-solid fa-gear text-2xl" id="setting"></i>
             </div>
             <div class="menuColor none">
                 <li class="active base" data-color="base"></li>
@@ -58,15 +58,15 @@
             </div>
             <div class="adsShoes flex flex-row items-center w-full gap-5 px-[6rem] my-[10%]">
                 <div class="img w-[60%] h-full relative">
-                    <img src="showcase/shoe1-1/img1.png" class="w-[80%] relative left-[15%] rotate-[30deg]" alt="">
-                    <div class="bg"></div>
+                    <img src="showcase/shoe1-1/img1.png" class="w-[80%] relative left-[15%] rotate-[30deg] top-[50px] z-[1]" alt="">
+                    <div class="bg absolute top-0 left-0 w-[70%] h-[150%] z-[-1] rounded-[20px]"></div>
                     <!-- <div class="messDisc">Get Up to 50 % Discount</div> -->
                 </div>
                 <div class="text w-[40%] flex flex-col items-start gap-5">
-                    <span class="title">About Us</span>
-                    <span class="heading">We Provide A high Quality Shoes Sneakers</span>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit nam quae odit ad illum animi, voluptatum optio, qui ex quibusdam est obcaecati! Dolores eligendi unde quo in cum a dolor?</p>
-                    <button><a href="#New">Discover Shoes</a></button>
+                    <span class="title uppercase">About Us</span>
+                    <span class="heading w-[90%]">We Provide A high Quality Shoes Sneakers</span>
+                    <p class="w-[70%]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit nam quae odit ad illum animi, voluptatum optio, qui ex quibusdam est obcaecati! Dolores eligendi unde quo in cum a dolor?</p>
+                    <button class="w-[200px] p-[10px] rounded-[10px]"><a href="#New">Discover Shoes</a></button>
                 </div>
             </div>
         </div>
@@ -125,8 +125,29 @@
 
         <!-- start ads -->
 
-        <div class="Home relative my-[10%]" id="Home">
-            <div class="item flex flex-col items-center w-full" id="itemSlider">
+        <div class="Home relative my-[20%]" id="Home">
+            <div class="item flex flex-row items-center w-full justify-center" id="itemSlider">
+                <div class="info w-[50%] flex flex-col items-start gap-4">
+                    <span class="OFFER">Special Offer</span>
+                    <span class="title">Running Sneaker Shoes</span>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, culpa minus? Ipsam praesentium quidem unde delectus eius eveniet labore sunt error distinctio quam doloribus in doloremque, nisi reiciendis? Laboriosam, cumque?</p>
+                    <div class="price">
+                            <span class="discount">$<span class="original-price">120.00</span></span>
+                            <span class="priceNew">$<span class="price_new">80.00</span></span>
+                    </div>
+                    <div class="buttons">
+                        <button class="btnSubmit" id="btnBuy">Buy Now</button>
+                        <!-- <button class="btn">Discover More</button> -->
+                        <div class="count flex flex-row items-center gap-4 w-[150px] p-[15px] justify-center border-none outline-none rounded-lg text-white">
+                            <i class="fa-solid fa-minus"></i>
+                            <span class="">1</span>
+                            <i class="fa-solid fa-plus"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="img w-[50%] relative">
+                    <img src="showcase/shoe1-1/img1.png" alt="">
+                </div>
             </div>
             <div class="pagination">
                 <i class="fa-solid fa-chevron-left" id="prev"></i>
@@ -138,7 +159,7 @@
 
         <!-- Start Arrow Btn -->
 
-        <div class="btn_arrow none" id="btn_arrow">
+        <div class="btn_arrow none fixed left-[20px] bottom-[20px]" id="btn_arrow">
             <button class="arrow"><i class="fa-solid fa-chevron-up"></i></button>
         </div>
 
@@ -248,18 +269,18 @@
 
     <!-- Start Card Menu -->
 
-    <div class="cart none" id="cart">
+    <div class="cart none w-[450px] fixed right-[0] top-0 h-[100vh] z-[1000]" id="cart">
         <div class="cartConent">
-            <div class="empty_cart" id="empty">
-                <span class="title">Cart IS Empty</span>
+            <div class="empty_cart flex items-center justify-center min-h-[100vh]" id="empty">
+                <span class="title uppercase">Cart IS Empty</span>
             </div>
             <div class="cart-content_items flex flex-col items-start">
-                <div class="intro">
+                <div class="intro p-[30px] pb-[20px] w-full">
                     <span>MY CART</span>
                 </div>
-                <div class="cart_items flex flex-col items-center gap-3 w-full none" id="cart_item">
+                <div class="cart_items flex flex-col items-center p-[20px] gap-3 w-full none" id="cart_item">
                 </div>
-                <button class="btn_check">Checkout</button>
+                <button class="btn_check py-[10px] px-[20px] rounded-md uppercase w-[90%] my-[30px] mx-auto">Checkout</button>
             </div>
         </div>
     </div>
@@ -268,11 +289,57 @@
 
     <!-- Start Cart Shoes Details -->
 
-        <div class="card_info_cont" id="card_info">
+        <div class="card_info_cont bg-[#dee2e6] w-[800px] p-[30px] rounded-[10px]" id="card_info">
 
         </div>
 
         <!-- End Card Shoes Details -->
+
+        <!-- Start Payment -->
+        <div class="form_paymentCheckOut none fixed flex flex-col items-start gap-[3rem]  px-[1rem]">
+            <span>Pay With Card</span>
+            <div class="form flex flex-col items-start gap-4 w-full">
+                <div class="input flex flex-col items-start">
+                    <label for="email" class="text-base text-slate-500">Email</label>
+                    <div class="email flex flex-row items-center w-full relative">
+                        <input type="email" name="email" id="emailPay" placeholder="Enter Your Email">
+                        <i class="fa-solid fa-envelope absolute right-[20px]"></i>
+                    </div>
+                </div>
+                <div class="input flex flex-col items-start card_info">
+                    <label for="card_number" class="text-base text-slate-500">Card Number</label>
+                    <div class="card_number flex flex-row items-center relative w-full">
+                        <input type="text" name="card_number" id="card_number" placeholder="123 456 789 123">
+                        <div class="card_icon flex flex-row items-center absolute right-[20px] gap-2">
+                            <i class="fa-brands fa-cc-visa "></i>
+                            <i class="fa-brands fa-cc-mastercard"></i>  
+                        </div>
+                    </div>
+                    <div class="card_info_more flex flex-row items-center w-full">
+                        <input type="text" name="date" id="date" placeholder="MM/YY">
+                        <input type="text" name="cvc" id="cvc" placeholder="CVC">
+                    </div>
+                </div>
+                <div class="input flex flex-col items-start card_name">
+                    <label for="card_name" class="text-base text-slate-500">Card Name</label>
+                    <input type="text" name="card_name" id="card_name" placeholder="Enter Your Card Name">
+                </div>
+                <div class="input flex flex-col items-start">
+                    <label for="address" class="text-base text-slate-500">Address</label>
+                    <input type="text" name="address" id="address" placeholder="Enter Your Address">
+                    <div class="street_zip flex flex-row items-center w-full">
+                        <input type="text" name="street" id="street" placeholder="Street">
+                        <input type="text" name="zip" id="zip" placeholder="Zip">
+                    </div>
+                </div>
+                <span class="price_total text-lg text-black"></span>
+                <button class="btn_pay">Pay</button>
+            </div>
+            <div class="closeicon absolute top-[20px] right-[20px]">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+        </div>
+        <!-- End Payment -->
     <script src="index.js"></script>
 </body>
 </html>

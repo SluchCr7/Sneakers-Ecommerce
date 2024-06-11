@@ -105,6 +105,10 @@ ul {
   list-style: none;
 }
 
+.redBorder {
+  border: 2px solid #870202 !important;
+}
+
 .base {
   --color-text: var(--black);
 }
@@ -260,8 +264,6 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 30px;
-  margin-bottom: 50px;
-  margin-top: 6rem;
 }
 .Home .img {
   width: 35%;
@@ -270,13 +272,6 @@ body {
 }
 .Home .img img {
   width: 100%;
-}
-.Home .info {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
 }
 .Home .info span {
   font-size: var(--medium-font);
@@ -327,7 +322,7 @@ body {
   font-size: var(--sm-font);
   font-weight: var(--weight-meduiem);
   color: var(--black);
-  padding: 10px 20px;
+  padding: 15px;
   border: 1px solid var(--black);
   border-radius: 5px;
   transition: 0.5s ease;
@@ -338,13 +333,22 @@ body {
   background-color: var(--black);
   color: var(--white);
 }
+.Home .info .buttons .count {
+  background-color: var(--link-col);
+}
+.Home .info .buttons .count span {
+  font-size: var(--medium-font);
+  font-weight: var(--weight-ext-medui);
+  color: var(--white);
+}
 .Home .pagination {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 50px;
   position: absolute;
-  bottom: -60px;
+  bottom: -80px;
+  left: 20%;
 }
 .Home .pagination i {
   font-size: var(--medium-font);
@@ -372,38 +376,19 @@ body {
 }
 
 .cart {
-  width: 450px;
   background-color: var(--second-color);
-  position: fixed;
-  right: 0;
-  top: 0px;
-  height: 100vh;
-  z-index: 1000;
-}
-.cart .empty_cart {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
 }
 .cart .empty_cart .title {
   font-size: var(--medium-font);
   font-weight: var(--weight-lg);
   color: red;
-  text-transform: uppercase;
-}
-.cart .cart_items {
-  padding: 20px;
 }
 .cart .cart_items .item img {
-  width: 100px;
+  width: 200px;
   height: 100px;
 }
 .cart .intro {
-  padding: 30px;
-  padding-bottom: 20px;
   border-bottom: 1px solid #ced4da;
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -417,14 +402,8 @@ body {
   font-size: var(--sm-font);
   font-weight: var(--weight-meduiem);
   color: var(--black);
-  padding: 10px 20px;
   border: 1px solid var(--black);
-  border-radius: 5px;
   transition: 0.5s ease;
-  width: 150px;
-  text-transform: uppercase;
-  width: 90%;
-  margin: 30px auto;
 }
 .cart .btn_check:hover {
   background-color: var(--black);
@@ -523,16 +502,10 @@ body {
 }
 
 .Menu {
-  position: fixed;
-  left: 20px;
-  top: 20%;
   display: flex;
   flex-direction: row;
   align-items: start;
   gap: 20px;
-}
-.Menu.rightpos {
-  right: 24% !important;
 }
 .Menu .setting {
   display: flex;
@@ -541,12 +514,8 @@ body {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  justify-content: center;
-  padding: 10px;
-  background-color: var(--black);
 }
 .Menu .setting i {
-  font-size: var(--medium-font);
   color: var(--yellow);
   animation: rotateIcon 7s linear infinite;
 }
@@ -657,9 +626,6 @@ body {
 }
 
 .btn_arrow {
-  position: fixed;
-  left: 20px;
-  bottom: 20px;
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -780,7 +746,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
 }
 .adsShoes .img img {
   position: relative;
@@ -789,65 +754,34 @@ body {
 }
 .adsShoes .img .bg {
   background-color: var(--link-col);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 70%;
-  height: 150%;
-  z-index: -1;
-  border-radius: 20px;
   box-shadow: 0 0 5px 1px var(--link-col);
-}
-.adsShoes .img .messDisc {
-  position: absolute;
-  bottom: -55%;
-  left: -50px;
-  background-color: #00000035;
-  border-radius: 15px;
-  padding: 30px;
-  width: 250px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 .adsShoes .text .title {
   font-size: var(--sm-font);
   font-weight: var(--weight-lg);
   color: var(--color-text);
-  text-transform: uppercase;
 }
 .adsShoes .text .heading {
   font-size: 3.5rem;
   font-weight: var(--weight-xlg);
   color: var(--black);
-  width: 90%;
 }
 .adsShoes .text p {
   font-size: var(--sm-font);
   font-weight: var(--weight-meduiem);
   color: var(--black);
   line-height: 25px;
-  width: 70%;
 }
 .adsShoes .text button {
-  width: 200px;
+  background-color: var(--link-col);
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--link-col);
-  padding: 10px;
-  border-radius: 10px;
   font-size: var(--medium-font);
   font-weight: var(--weight-ext-medui);
   color: var(--white);
 }
 
-.card_info_card {
-  background-color: #dee2e6;
-  width: 800px;
-  padding: 30px;
-  border-radius: 20px;
-}
 .card_info_card .image {
   width: 100%;
 }
@@ -961,6 +895,20 @@ body {
   }
 }
 @media (max-width: 767px) {
+  .Home .item {
+    padding: 3rem;
+    flex-direction: column-reverse !important;
+  }
+  .Home .item .info {
+    width: 100% !important;
+  }
+  .Home .item .info p {
+    width: 80% !important;
+  }
+  .Home .item .img {
+    width: 100% !important;
+  }
+
   .adsShoes {
     flex-direction: column !important;
     padding: 20% 0 !important;
@@ -999,7 +947,65 @@ body {
     display: block !important;
   }
 
-  ::-webkit-scrollbar {
-    display: none;
+  .cart {
+    width: 350px !important;
   }
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
+.details_paymentCheckOut {
+  border-right: 1px solid var(--black) !important;
+  height: 100%;
+}
+.details_paymentCheckOut .shop {
+  font-size: var(--sm-font);
+  font-weight: var(--weight-meduiem);
+  color: var(--white);
+  background-color: var(--link-col);
+  padding: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form_paymentCheckOut {
+  background-color: var(--second-color);
+  padding: 25px;
+  border-radius: 10px;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30%;
+  z-index: 1000;
+}
+.form_paymentCheckOut .input {
+  width: 100%;
+}
+.form_paymentCheckOut .input input {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  border: 1px solid transparent;
+}
+.form_paymentCheckOut .input input:focus {
+  border: 1px solid var(--link-col);
+}
+.form_paymentCheckOut .btn_pay {
+  font-size: var(--medium-font);
+  font-weight: var(--weight-meduiem);
+  color: var(--white);
+  padding: 10px;
+  border-radius: 10px;
+  background-color: var(--link-col);
+  transition: 0.5s ease;
+  width: 100%;
+}
+.form_paymentCheckOut .btn_pay:hover {
+  background-color: var(--black);
+  color: var(--white);
 }
